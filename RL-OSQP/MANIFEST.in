@@ -1,0 +1,10 @@
+include README.rst LICENSE requirements.txt
+include rlqp_sources/CMakeLists.txt
+recursive-include rlqp_sources/configure *
+recursive-include rlqp_sources/src *
+recursive-include rlqp_sources/lin_sys *
+recursive-include rlqp_sources/include *
+recursive-include extension *
+recursive-include module/codegen/sources *
+recursive-include module/codegen/files_to_generate *
+
