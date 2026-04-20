@@ -1,10 +1,11 @@
-此包要求gcc，g++版本小于等于8（pycuda的要求）
+This package requires gcc and g++ version 8 or lower (requirements for PyCUDA).
 
-操作见操作说明.txt.
+See the instructions in the .txt file for operation details.
 
-目前修改到的版本为共旋坐标法，且实现了gpu的代码配置，目前在解决的问题为虚假高频振动问题。
+The current version uses the co-rotational coordinate method . The problem being addressed is spurious high-frequency vibration.
 
-2023.09.06 目前已用HHT方法解决虚假高频分量，现在试图使用位移作为未知变量而非加速度。
-同时探究诸如准静态，不同求解方法的影响。（目前已发现osqp和cvxopt对同一问题有解和无解产生不同结果）
+September 6, 2025: The spurious high-frequency components have been solved using the HHT method. Now, we are attempting to use displacement as the unknown variable instead of acceleration.
 
-2023.09.17 已完成使用位移作为未知变量而非加速度。探究诸如准静态，不同求解方法的影响，及探究能量不增长的方法。
+We are also exploring the effects of different solution methods, such as quasi-static methods. (Currently, we have found that osqp and cvxopt produce different results for the same problem with and without a solution.)
+
+September 17, 2025: Using displacement as the unknown variable instead of acceleration has been completed. We are exploring the effects of different solution methods, such as quasi-static methods, and methods to prevent energy growth.
