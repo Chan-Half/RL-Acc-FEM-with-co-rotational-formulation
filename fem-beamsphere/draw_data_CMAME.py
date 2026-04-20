@@ -53,7 +53,7 @@ plt.grid(True, linestyle='--', alpha=0.6)
 
 plt.tight_layout()
 
-plt.savefig(os.path.join(base_dir, "CMAME_exp2_results_fix.png"), dpi=300)  # save the fig
+plt.savefig(os.path.join(base_dir, "CMAME_exp2_results_fix.png"), dpi=650)  # save the fig
 
 plt.show()
 
