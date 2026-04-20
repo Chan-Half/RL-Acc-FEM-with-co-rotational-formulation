@@ -1,11 +1,11 @@
 """
 ###########################################################################################
-#  @copyright: 中国科学院自动化研究所智能微创医疗技术实验室
+#  @copyright: Institute of Automation,Chinese Academy of Sciences
 #  @filename:  fem_opengl_draw.py
 #  @brief:     fem draw function
 #  @author:    Hao Chen
 #  @version:   1.0
-#  @date:      2023.03.01
+#  @date:      2026.03.01
 #  @Email:     chen.hao2020@ia.ac.cn
 ###########################################################################################
 """
