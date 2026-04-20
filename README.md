@@ -2,7 +2,7 @@
 The data and code of my CMAME paper, which include a FEM beam code and 
 """
 ###########################################################################################
-#  @copyright: 中国科学院自动化研究所智能微创医疗技术实验室
+#  @copyright: Institute of Automation, Chinese Academy of Sciences
 #  @filename:
 #  @brief:     fem environment
 #  @author:    Hao Chen
