@@ -61,3 +61,13 @@ for ubuntu:
     sudo apt-get install python3-opengl
     
     pip install PyOpenGL
+
+
+
+
+
+then you can use the FEM-co-rotational-beam,that is 
+
+OSQP_ALGEBRA_BACKEND=builtin python ./FEM_Main.py
+
+note that OSQP_ALGEBRA_BACKEND=builtin is needed, which Avoided CUDA conflicts.
