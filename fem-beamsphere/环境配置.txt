@@ -1,6 +1,6 @@
 """
 ###########################################################################################
-#  @copyright: 中国科学院自动化研究所智能微创医疗技术实验室
+#  @copyright: Institute of Automation, Chinese Academy of Sciences
 #  @filename:
 #  @brief:     fem environment
 #  @author:    Hao Chen
