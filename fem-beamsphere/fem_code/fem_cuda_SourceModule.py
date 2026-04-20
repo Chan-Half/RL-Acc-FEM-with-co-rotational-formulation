@@ -1,12 +1,13 @@
 """
 ###########################################################################################
-#  @copyright: 中国科学院自动化研究所智能微创医疗技术实验室
-#  @filename:  fem_cuda_SourceModule.py
-#  @brief:     fem cuda function
+#  @copyright: Institute of Automation, Chinese Academy of Sciences
+#  @filename:  fem_cuda_mesh.py
+#  @brief:     fem cuda function of corotate mesh
 #  @author:    Hao Chen
 #  @version:   1.0
-#  @date:      2023.04.03
+#  @date:      2025.12.19
 #  @Email:     chen.hao2020@ia.ac.cn
+#  @Note:      Remember to free up the memory allocated by `new`, otherwise a memory leak will occur.
 ###########################################################################################
 """
 from pycuda.compiler import SourceModule
