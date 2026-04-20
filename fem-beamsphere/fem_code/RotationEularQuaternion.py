@@ -1,11 +1,10 @@
 """
 ###########################################################################################
-#  @copyright: 中国科学院自动化研究所智能微创医疗技术实验室
 #  @filename:  RotationEularQuaternion.py
 #  @brief:     fem quaternion, Eular and rotation transform function
 #  @author:    Hao Chen
 #  @version:   1.0
-#  @date:      2023.04.03
+#  @date:      2026.04.03
 #  @Email:     chen.hao2020@ia.ac.cn
 ###########################################################################################
 """
