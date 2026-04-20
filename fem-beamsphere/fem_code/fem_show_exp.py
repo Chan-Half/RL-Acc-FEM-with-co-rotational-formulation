@@ -1,6 +1,5 @@
 """
 ###########################################################################################
-#  @copyright: 中国科学院自动化研究所智能微创医疗技术实验室
 #  @filename:  fem_show_exp.py
 #  @brief:     fem show result of exp
 #  @author:    Hao Chen
