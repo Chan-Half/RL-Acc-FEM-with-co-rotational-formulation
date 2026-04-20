@@ -3,10 +3,15 @@ The data and code of my CMAME paper, which include a FEM beam code and co-rotati
 
 """
 @copyright: Institute of Automation, Chinese Academy of Sciences
+
 @filename:
+
 @brief:     fem environment
+
 @author:    Hao Chen
+
 @version:   1.0
+
 @date:      2026.04.03
 """
 
