@@ -1,0 +1,31 @@
+Basic Keyboard Operations: ---------------------------------------------------------------------------------
+
+Sheath Control: Numpad up, down, left, right, and io; sheath moves backward, forward, left, right, forward, and backward (fem_run586-618).
+
+Insertion Unit Control: wsadqe; insertion unit moves backward, forward, left, right, forward, and backward (fem_run494-580).
+
+x; rotates the foreground coordinate system around the axis, controlling the camera and keyboard/handle operation in the up direction (fem_run553).
+
+z; twists the foreground, applying force; generally avoid pressing this button.
+
+Reset Button: 1; restores all positions. It's best to return the handle to its original position before pressing this button, otherwise it will follow the handle when moving again (fem_run452).
+
+Adjusting Initial Pose: Press 1 to reset, press 2 to enter initial pose adjustment, then wsadqe and ikjluo translate along the x, y, and z axes to the corresponding foreground and rear points respectively. After adjustment, press 3 to return to basic operations. Key bindings: 123, wsad, qe, ikjl, uo, fem_run642-735
+
+Exit: esc, or close the window by pressing the upper right corner, fem_run445-451
+
+
+Empty Run: Press space or 'r' to run only FEM, leaving everything else unchanged. This is equivalent to rerunning collision detection and displacement calculation. It's best not to press 'r'. (fem_run633-639)
+
+Gamepad Control: ------------------------------------------------------------------------------------- Operation unchanged: fem_run347-443
+
+Mouse Control: ------------------------------------------------------------------------------------- Left Mouse Button: Rotate around the camera's origin. Right Mouse Button: Translate along the camera's x and y axes. Middle Mouse Button: Translate along the camera's z-axis, zooming in and out.
+
+Code Location: fem_opengl_draw 915-953, response speed and axis adjustment are in fem_opengl_draw367-369
+
+
+Warm Startup --------------------------------------------------------------------------------
+
+python FEM_Main.py starts normally, running data in data/run_data. When a fem error pops up, it saves the last data file location to data/run_data/Is_warm_start.txt.
+
+python FEM_Main.py 1. Warm Startup, reads the last file and initializes it here.
