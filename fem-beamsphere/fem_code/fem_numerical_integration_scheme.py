@@ -1,11 +1,11 @@
 """
 ###########################################################################################
-#  @copyright: 中国科学院自动化研究所智能微创医疗技术实验室
+#  @copyright: Institute of Automation, Chinese Academy of Sciences
 #  @filename:  fem_numerical_integration_scheme.py
 #  @brief:     fem numerical integration scheme
 #  @author:    Hao Chen
 #  @version:   1.3
-#  @date:      2023.07.03
+#  @date:      2026.03.03
 #  @Email:     chen.hao2020@ia.ac.cn
 ###########################################################################################
 """
@@ -225,29 +225,7 @@ def py_osqp_dynamic_x(model, M, D, gK, F, f1, gravity, A, b, Aeq, beq, delta_h_t
 
     # 转制后乘以自己会使得算出的结果出问题
     dx, y = solve_py_osqp(sp.csc_matrix(P/(1+alpha)), (q + F - f1 - gravity - fc)/(1+alpha), sp.csc_matrix(A), b.flatten(), sp.csc_matrix(Aeq), beq.flatten(), verbose=False)
-    # r1 = np.dot(A, dx)-b
-    # r2 = np.dot(Aeq, dx) - beq
-    # r3 = np.dot(P/(1+alpha), dx) + (q + F - f1 - gravity - fc)/(1+alpha) + np.dot(A.transpose(), y[:A.shape[0]]) + np.dot(Aeq.transpose(), y[A.shape[0]:])
-    # for i in r1:
-    #     for j in i:
-    #         if j > 1e-3:
-    #             print('inequality unfeasible!')
-    #             print(r1)
-    #             print(j)
-    #             break
-    # for i in r2:
-    #     for j in i:
-    #         if j > 1e-3 or j < -1e-3:
-    #             print('equality unfeasible!')
-    #             print(r2)
-    #             print(j)
-    #             break
-    # for j in r3:
-    #     if j > 1e-3 or j < -1e-3:
-    #         print('force residual is too large!')
-    #         print(r3)
-    #         print(j)
-    #         break
+
 
     t2 = time.time()
     model.update_state_hht_alpha_integration_x(dx, gamma, beta)
@@ -362,63 +340,10 @@ def nnqp_hht(model, M, D, gK, F, f1, gravity, A, b, Aeq, beq, delta_h_time, q, f
     #     print('the primal problem is infeasible')
     #     dx = np.zeros_like(model.dx)  # + 0.00000000001
 
-    # # ------------------------------------------------------------ #
-    # # !!!!!!!!!!!!!注意这里做了一个缩放，来自以前的方案，但这样受力就不再平衡了，随着计算再逐渐平衡!!!!!!!!!!!!
-    # l_dx = np.linalg.norm(dx)
-    # if l_dx > 1e-3:
-    #     dx /= l_dx * 1e3
-    #     y /= l_dx * 1e3
 
 
 
     model.update_state_hht_alpha_integration_x(dx, gamma, beta)
-
-
-    # ==========================================================
-    # 🌟 智能速度/加速度投影 (终极消除接触抖动)
-    # ==========================================================
-    # if m > 0:
-    #     if A_nnqp is not None and y is not None:
-    #         # 1. 提取质量矩阵的对角线 (极其关键：用于计算真实的物理冲量)
-    #         if sp.issparse(model.M):
-    #             M_diag = model.M.diagonal()
-    #         else:
-    #             M_diag = np.diag(model.M)
-    #
-    #         # 安全求逆，防止除零 (M_inv_diag 相当于每个自由度的 1/m)
-    #         M_inv_diag = 1.0 / np.where(np.abs(M_diag) > 1e-12, M_diag, 1e-12)
-    #
-    #         # 2. 动态自适应阈值，过滤求解器微小噪声
-    #         max_y = np.max(np.abs(y[:m]))
-    #         active_tol = max(1e-3 * max_y, 1e-4)
-    #         active_indices = np.where(np.abs(y[:m]) > active_tol)[0]
-    #
-    #         for idx in active_indices:
-    #             # 提取单条接触约束的法向梯度 (不再做暴力的 norm 归一化)
-    #             A_i = A_nnqp[idx, :].toarray().flatten()
-    #
-    #             # 计算接触面法向上的相对物理速度
-    #             v_rel = np.dot(A_i, model.v)
-    #
-    #             # v_rel < 0 代表由于 HHT 算法的反噬，节点正试图“向外假弹”
-    #             if v_rel < 0:
-    #                 # 计算广义有效质量分母 (A * M^-1 * A^T)
-    #                 denom = np.dot(A_i, A_i * M_inv_diag)
-    #                 if denom > 1e-12:
-    #                     # 计算完全非弹性碰撞的物理冲量 (Lagrange Multiplier for velocity)
-    #                     impulse = -v_rel / denom
-    #
-    #                     # 将真实冲量作用于系统 (绝对不会污染旋转自由度！)
-    #                     model.v += impulse * (A_i * M_inv_diag)
-    #
-    #             # 3. 对加速度做同等动量抹平，彻底掐断下一帧的震荡源
-    #             a_rel = np.dot(A_i, model.a)
-    #             if a_rel < 0:
-    #                 denom = np.dot(A_i, A_i * M_inv_diag)
-    #                 if denom > 1e-12:
-    #                     impulse_a = -a_rel / denom
-    #                     model.a += impulse_a * (A_i * M_inv_diag)
-
 
 
 
