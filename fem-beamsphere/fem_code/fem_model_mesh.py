@@ -418,8 +418,8 @@ class Model(object):
             # self.R2_local[i] = np.eye(3)
 
     def update_R1R2(self):
-        # 更新于dm之后
-        # 注意R1R2的更新方式可能会变
+        # Updated after dm
+        # Note that the update method for R1 and R2 may change.
         for i in range(self.node_number - 1):
             # self.R1_local[i] = np.dot(self.AxialAngle2Rotation(self.ddm[i, 1:4]), self.R1_local[i])
             # self.R2_local[i] = np.dot(self.AxialAngle2Rotation(self.ddm[i, 4:7]), self.R2_local[i])
