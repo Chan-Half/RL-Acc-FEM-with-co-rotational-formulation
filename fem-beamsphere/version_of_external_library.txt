@@ -11,7 +11,9 @@
 
 python3.9，CUDA11.1 
 
-The first column below is the package name, the second column is the version, and the third column is the latest version. Just find the corresponding ones.
+
+
+The first column below is the package name, the second column is the version, and the third column is the latest version. Just find the corresponding ones. this is a reference setup, you can update them if nessesary.
 
 
 
