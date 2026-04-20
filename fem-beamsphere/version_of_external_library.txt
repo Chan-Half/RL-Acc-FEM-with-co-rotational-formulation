@@ -1,15 +1,17 @@
 """
 ###########################################################################################
-#  @copyright: 中国科学院自动化研究所智能微创医疗技术实验室
-#  @filename:  包版本
+#  @copyright: Institute of automation
+#  @filename:  version of ext lib
 #  @brief:     fem environment
 #  @author:    Hao Chen
 #  @version:   1.0
-#  @date:      2023.04.03
+#  @date:      2026.04.03
 ###########################################################################################
 """
 
-python3.9，CUDA11.1 以下第一列是包的名字，第二列是版本，第三列是现有最新版本，找到对应的几个就行了。
+python3.9，CUDA11.1 
+
+The first column below is the package name, the second column is the version, and the third column is the latest version. Just find the corresponding ones.
 
 
 
