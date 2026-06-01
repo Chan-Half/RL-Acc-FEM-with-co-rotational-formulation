@@ -8,7 +8,7 @@ The data and code of our CMAME paper, which include a FEM beam code and co-rotat
 
 @brief:     fem environment
 
-@author:    Hao Chen
+@author:    Hao Chen，Jian Chen，Hongbin Liu
 
 @version:   1.0
 
